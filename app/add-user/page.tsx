@@ -283,7 +283,7 @@ export default function AddUser() {
             fullWidth
             size="md"
             radius="md"
-            loading={loading}
+            loading={loading}    
             onClick={submit}
           >
             {loading
@@ -292,6 +292,6 @@ export default function AddUser() {
           </Button>
         </Stack>
       </Paper>
-    </Container>
+    </Container>      
   );
 }
