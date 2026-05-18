@@ -287,10 +287,10 @@ export default function AddUser() {
             onClick={submit}
           >
             {loading
-              ? "Creating..."
+              ? "Creating...."
               : "Create User"}
           </Button>
-        </Stack>
+        </Stack>   
       </Paper>
     </Container>      
   );
