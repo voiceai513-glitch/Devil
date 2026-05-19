@@ -2,7 +2,6 @@
 
 import {
   Card,
-  Image,
   Text,
   Group,
   Button,
@@ -16,6 +15,8 @@ import {
   FaInstagram,
   FaFacebook,
   FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 export default function UserCard({
@@ -66,12 +67,9 @@ export default function UserCard({
           <Avatar
             src={
               user.avatar ||
-              "https://placehold.co/300"
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSux_ANwWoO6ywDurlACz7HtTlcLebdqRf22DrStvIQ6g&s&ec=121691717"
             }
-            // size={{
-            //   base: 90,
-            //   sm: 110,
-            // }}
+          
             radius="50%"
             style={{
               position: "absolute",
@@ -139,6 +137,34 @@ export default function UserCard({
               {user.email}
             </Text>
 
+            {/* PHONE */}
+            <Group gap={6}>
+              <FaPhoneAlt
+                color="#666"
+              />
+
+              <Text
+                size="sm"
+                c="dimmed"
+              >
+                {user.phone}
+              </Text>
+            </Group>
+
+            {/* WHATSAPP */}
+            <Group gap={6}>
+              <FaWhatsapp
+                color="green"
+              />
+
+              <Text
+                size="sm"
+                c="dimmed"
+              >
+                {user.whatsapp}
+              </Text>
+            </Group>
+
             {/* BIO */}
             {user.bio && (
               <Box mt={5}>
@@ -183,7 +209,7 @@ export default function UserCard({
                 Instagram
               </Button>
 
-              <Button        
+              <Button
                 component="a"
                 href={
                   user.facebook
@@ -204,6 +230,27 @@ export default function UserCard({
                 fullWidth
               >
                 Facebook
+              </Button>
+
+              <Button
+                component="a"
+                href={`https://wa.me/${user.whatsapp}`}
+                target="_blank"
+                radius="xl"
+                size="md"
+                leftSection={
+                  <FaWhatsapp />
+                }
+                styles={{
+                  root: {
+                    background:
+                      "linear-gradient(135deg,#25D366,#128C7E)",
+                    border: "none",
+                  },
+                }}
+                fullWidth
+              >
+                WhatsApp
               </Button>
             </Group>
           </Stack>

@@ -32,6 +32,7 @@ export default function AddUser() {
     email: "",
     password: "",
     phone: "",
+    whatsapp: "",
     location: "",
     instagram: "",
     facebook: "",
@@ -85,6 +86,7 @@ export default function AddUser() {
           email: "",
           password: "",
           phone: "",
+          whatsapp: "",
           location: "",
           instagram: "",
           facebook: "",
@@ -178,12 +180,24 @@ export default function AddUser() {
           />
 
           <TextInput
-            placeholder="Phone"
+            placeholder="Phone Number"
             value={form.phone}
             onChange={(e) =>
               setForm({
                 ...form,
                 phone:
+                  e.target.value,
+              })
+            }
+          />
+
+          <TextInput
+            placeholder="WhatsApp Number"
+            value={form.whatsapp}
+            onChange={(e) =>
+              setForm({
+                ...form,
+                whatsapp:
                   e.target.value,
               })
             }
@@ -258,7 +272,7 @@ export default function AddUser() {
           <TextInput
             placeholder="Email"
             value={form.email}
-            onChange={(e) =>    
+            onChange={(e) =>
               setForm({
                 ...form,
                 email:
@@ -283,15 +297,15 @@ export default function AddUser() {
             fullWidth
             size="md"
             radius="md"
-            loading={loading}    
+            loading={loading}
             onClick={submit}
           >
             {loading
               ? "Creating...."
               : "Create User"}
           </Button>
-        </Stack>   
+        </Stack>
       </Paper>
-    </Container>      
+    </Container>
   );
 }

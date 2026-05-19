@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema(
     gender: String,
     dateOfBirth: String,
     avatar: String,
-
+    whatsapp: String,
     location: String,
 
     instagram: String,
