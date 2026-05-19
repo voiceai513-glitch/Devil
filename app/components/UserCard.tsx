@@ -105,13 +105,7 @@ export default function UserCard({
                 {user.lastName}
               </Text>
 
-              <Text
-                size="sm"
-                fw={600}
-                c="blue"
-              >
-                Full Stack Developer
-              </Text>
+             
             </Box>
 
             {/* LOCATION */}
