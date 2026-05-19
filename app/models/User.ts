@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema(
     dateOfBirth: String,
     avatar: String,
     whatsapp: String,
+     bio: String,
     location: String,
 
     instagram: String,

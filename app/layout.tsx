@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rahul",
-  description: "Full stak devloper in sirsa",
+  title: "white devil",
+  description: "A simple user management app built with Next.js, Mantine, and MongoDB.",
    icons: {
     icon: [
       {
