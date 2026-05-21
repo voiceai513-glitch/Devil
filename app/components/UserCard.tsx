@@ -12,7 +12,7 @@ import {
   Badge,
   Divider,
 } from "@mantine/core";
-
+import { MdPaid } from "react-icons/md";
 import {
   FaInstagram,
   FaFacebook,
@@ -27,6 +27,7 @@ export default function UserCard({
 }: any) {
   return (
     <Flex justify="center" px={15} py={40}>
+     
       <Card
         shadow="xl"
         radius="28px"
@@ -84,7 +85,7 @@ export default function UserCard({
           />
 
           {/* PROFILE IMAGE */}
-          <Avatar
+          <Avatar 
             src={
               user.avatar 
             }

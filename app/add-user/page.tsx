@@ -110,7 +110,7 @@ export default function AddUser() {
       } else {
         alert(
           data.message ||
-            "Something went wrong"
+          "Something went wrong"
         );
       }
     } catch (error) {
@@ -142,13 +142,12 @@ export default function AddUser() {
           maxWidth: 1200,
           overflow: "hidden",
           background:
-            "#0c278c",
-          border:
-            "1px solid rgba(0, 0, 0, 0.15)",
+            "linear-gradient(135deg, #ff00cc, #0000ff, #ff0000, #0dff00)",
+          border: "1px solid rgba(255,255,255,0.2)",
         }}
       >
         <Grid >
-         
+
 
           {/* RIGHT SIDE */}
           <Grid.Col
@@ -166,9 +165,9 @@ export default function AddUser() {
                 justify="space-between"
                 mb={40}
               >
-                
 
-                
+
+
               </Group>
 
               {/* HEADER */}
@@ -215,7 +214,7 @@ export default function AddUser() {
                   Register now
                 </Text>
 
-               
+
 
                 <Divider
                   label="or"
@@ -229,7 +228,7 @@ export default function AddUser() {
                   {/* IMAGE */}
                   <FileInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Upload Avatar
                       </Text>
                     }
@@ -259,7 +258,7 @@ export default function AddUser() {
 
                   <TextInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         First Name
                       </Text>
                     }
@@ -285,7 +284,7 @@ export default function AddUser() {
 
                   <TextInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Last Name
                       </Text>
                     }
@@ -311,7 +310,7 @@ export default function AddUser() {
 
                   <TextInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Phone Number
                       </Text>
                     }
@@ -337,7 +336,7 @@ export default function AddUser() {
 
                   <TextInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         WhatsApp Number
                       </Text>
                     }
@@ -363,7 +362,7 @@ export default function AddUser() {
 
                   <TextInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Location
                       </Text>
                     }
@@ -389,7 +388,7 @@ export default function AddUser() {
 
                   <Select
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Gender
                       </Text>
                     }
@@ -420,7 +419,7 @@ export default function AddUser() {
 
                   <Textarea
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Bio
                       </Text>
                     }
@@ -447,7 +446,7 @@ export default function AddUser() {
 
                   <TextInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Instagram Link
                       </Text>
                     }
@@ -473,7 +472,7 @@ export default function AddUser() {
 
                   <TextInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Facebook Link
                       </Text>
                     }
@@ -499,7 +498,7 @@ export default function AddUser() {
 
                   <TextInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Email
                       </Text>
                     }
@@ -525,7 +524,7 @@ export default function AddUser() {
 
                   <PasswordInput
                     label={
-                      <Text c="white">
+                      <Text c="white" fw={900}>
                         Password
                       </Text>
                     }
@@ -568,42 +567,12 @@ export default function AddUser() {
                       : "SIGN UP"}
                   </Button>
 
-                   <Group
-                  grow
-                  mb={20}
-                >
-                  <Button
-                    variant="outline"
-                    color="gray"
-                    radius="md"
-                    h={50}
-                  >
-                    <FaFacebookF />
-                  </Button>
 
-                  <Button
-                    variant="outline"
-                    color="gray"
-                    radius="md"
-                    h={50}
-                  >
-                    <FaApple />
-                  </Button>
-
-                  <Button
-                    variant="outline"
-                    color="gray"
-                    radius="md"
-                    h={50}
-                  >
-                    <FaGoogle />
-                  </Button>
-                </Group>
                 </Stack>
               </Paper>
 
               {/* FOOTER */}
-             
+
             </Container>
           </Grid.Col>
         </Grid>
