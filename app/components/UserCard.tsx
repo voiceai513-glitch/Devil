@@ -352,7 +352,7 @@ export default function UserCard({
                     background:
                       "linear-gradient(135deg,#1877f2,#0a58ca)",
                     border: "none",
-                    boxShadow:
+                    boxShadow:    
                       "0 8px 20px rgba(24,119,242,0.25)",
                   },
                 }}
@@ -361,7 +361,7 @@ export default function UserCard({
                 Facebook
               </Button>
 
-              {/* WHATSAPP */}
+              {/* WHATSAPP */}        
               <Button
                 component="a"
                 href={`https://wa.me/${user.whatsapp}`}
@@ -384,7 +384,7 @@ export default function UserCard({
               >
                 WhatsApp
               </Button>
-            </Group>
+            </Group>   
           </Stack>
         </Box>
       </Card>
