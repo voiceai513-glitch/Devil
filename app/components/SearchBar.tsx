@@ -12,6 +12,7 @@ export default function SearchBar({
   onChange,
 }: Props) {
   return (
+    <>
     
     <TextInput
       placeholder="Search name or location..."
@@ -22,6 +23,6 @@ export default function SearchBar({
       radius="xl"
       size="md"
     />
-     
+     </>
   );
 }       
