@@ -86,8 +86,7 @@ export default function UserCard({
           {/* PROFILE IMAGE */}
           <Avatar
             src={
-              user.avatar ||
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSux_ANwWoO6ywDurlACz7HtTlcLebdqRf22DrStvIQ6g&s&ec=121691717"
+              user.avatar 
             }
             size={130}
             radius="50%"

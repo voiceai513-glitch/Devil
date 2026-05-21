@@ -12,7 +12,18 @@ import {
   Paper,
   FileInput,
   Image,
+  Box,
+  Grid,
+  Text,
+  Divider,
+  Group,
 } from "@mantine/core";
+
+import {
+  FaFacebookF,
+  FaGoogle,
+  FaApple,
+} from "react-icons/fa";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -112,200 +123,491 @@ export default function AddUser() {
   };
 
   return (
-    <Container
-      size="sm"
-      py={{
-        base: 20,
-        sm: 40,
+    <Box
+      style={{
+        minHeight: "100vh",
+        background:
+          "#050b2c",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 20,
       }}
     >
       <Paper
-        shadow="md"
-        radius="lg"
-        p={{
-          base: "md",
-          sm: "xl",
-        }}
+        radius="xl"
         withBorder
+        style={{
+          width: "100%",
+          maxWidth: 1200,
+          overflow: "hidden",
+          background:
+            "#0c278c",
+          border:
+            "1px solid rgba(0, 0, 0, 0.15)",
+        }}
       >
-        <Title
-          ta="center"
-          mb={25}
-          size="h2"
-        >
-          Create User
-        </Title>
+        <Grid >
+         
 
-        <Stack gap="md">
-          {/* IMAGE */}
-          <FileInput
-            label="Upload Avatar"
-            placeholder="Choose image"
-            accept="image/*"
-            onChange={handleImage}
-          />
-
-          {preview && (
-            <Image
-              src={preview}
-              alt="preview"
-              radius="md"
-              h={200}
-              fit="cover"
-            />
-          )}
-
-          <TextInput
-            placeholder="First Name"
-            value={form.firstName}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                firstName:
-                  e.target.value,
-              })
-            }
-          />
-
-          <TextInput
-            placeholder="Last Name"
-            value={form.lastName}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                lastName:
-                  e.target.value,
-              })
-            }
-          />
-
-          <TextInput
-            placeholder="Phone Number"
-            value={form.phone}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                phone:
-                  e.target.value,
-              })
-            }
-          />
-
-          <TextInput
-            placeholder="WhatsApp Number"
-            value={form.whatsapp}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                whatsapp:
-                  e.target.value,
-              })
-            }
-          />
-
-          <TextInput
-            placeholder="Location"
-            value={form.location}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                location:
-                  e.target.value,
-              })
-            }
-          />
-
-          <Select
-            placeholder="Select Gender"
-            data={[
-              "Male",
-              "Female",
-              "Other",
-            ]}
-            value={form.gender}
-            onChange={(value) =>
-              setForm({
-                ...form,
-                gender:
-                  value || "",
-              })
-            }
-          />
-
-          <Textarea
-            placeholder="Write Your Bio"
-            minRows={4}
-            value={form.bio}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                bio:
-                  e.target.value,
-              })
-            }
-          />
-
-          <TextInput
-            placeholder="Instagram Link"
-            value={form.instagram}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                instagram:
-                  e.target.value,
-              })
-            }
-          />
-
-          <TextInput
-            placeholder="Facebook Link"
-            value={form.facebook}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                facebook:
-                  e.target.value,
-              })
-            }
-          />
-
-          <TextInput
-            placeholder="Email"
-            value={form.email}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                email:
-                  e.target.value,
-              })
-            }
-          />
-
-          <PasswordInput
-            placeholder="Password"
-            value={form.password}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                password:
-                  e.target.value,
-              })
-            }
-          />
-
-          <Button
-            fullWidth
-            size="md"
-            radius="md"
-            loading={loading}
-            onClick={submit}
+          {/* RIGHT SIDE */}
+          <Grid.Col
+            span={{
+              base: 12,
+              md: 6,
+            }}
           >
-            {loading
-              ? "Creating...."
-              : "Create User"}
-          </Button>
-        </Stack>
+            <Container
+              size="sm"
+              py={40}
+            >
+              {/* TOPBAR */}
+              <Group
+                justify="space-between"
+                mb={40}
+              >
+                
+
+                
+              </Group>
+
+              {/* HEADER */}
+              <Box ta="center" mb={20}>
+                <Title fw={900}
+                  order={1}
+                  c="white"
+                >
+                  Welcome
+                </Title>
+
+                <Text
+                  c="dimmed"
+                  size="sm"
+                  mt={9}
+                >
+                  Use these awesome forms
+                  to login or create new
+                  account in your project
+                  for free
+                </Text>
+              </Box>
+
+              {/* FORM CARD */}
+              <Paper
+                radius="xl"
+                p="xl"
+                style={{
+                  background:
+                    "rgba(255,255,255,0.04)",
+                  border:
+                    "1px solid rgba(255,255,255,0.12)",
+                  backdropFilter:
+                    "blur(12px)",
+                }}
+              >
+                {/* SOCIAL */}
+                <Text
+                  ta="center"
+                  c="white"
+                  fw={600}
+                  mb={20}
+                >
+                  Register now
+                </Text>
+
+               
+
+                <Divider
+                  label="or"
+                  labelPosition="center"
+                  color="gray"
+                  mb={20}
+                />
+
+                {/* FORM */}
+                <Stack gap="md">
+                  {/* IMAGE */}
+                  <FileInput
+                    label={
+                      <Text c="white">
+                        Upload Avatar
+                      </Text>
+                    }
+                    placeholder="Choose image"
+                    accept="image/*"
+                    onChange={handleImage}
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  {preview && (
+                    <Image
+                      src={preview}
+                      alt="preview"
+                      radius="md"
+                      h={200}
+                      fit="cover"
+                    />
+                  )}
+
+                  <TextInput
+                    label={
+                      <Text c="white">
+                        First Name
+                      </Text>
+                    }
+                    placeholder="Your first name"
+                    value={form.firstName}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        firstName:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <TextInput
+                    label={
+                      <Text c="white">
+                        Last Name
+                      </Text>
+                    }
+                    placeholder="Your last name"
+                    value={form.lastName}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        lastName:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <TextInput
+                    label={
+                      <Text c="white">
+                        Phone Number
+                      </Text>
+                    }
+                    placeholder="Phone number"
+                    value={form.phone}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        phone:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <TextInput
+                    label={
+                      <Text c="white">
+                        WhatsApp Number
+                      </Text>
+                    }
+                    placeholder="WhatsApp number"
+                    value={form.whatsapp}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        whatsapp:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <TextInput
+                    label={
+                      <Text c="white">
+                        Location
+                      </Text>
+                    }
+                    placeholder="Your location"
+                    value={form.location}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        location:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <Select
+                    label={
+                      <Text c="white">
+                        Gender
+                      </Text>
+                    }
+                    placeholder="Select gender"
+                    data={[
+                      "Male",
+                      "Female",
+                      "Other",
+                    ]}
+                    value={form.gender}
+                    onChange={(value) =>
+                      setForm({
+                        ...form,
+                        gender:
+                          value || "",
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <Textarea
+                    label={
+                      <Text c="white">
+                        Bio
+                      </Text>
+                    }
+                    placeholder="Write your bio"
+                    minRows={4}
+                    value={form.bio}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        bio:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <TextInput
+                    label={
+                      <Text c="white">
+                        Instagram Link
+                      </Text>
+                    }
+                    placeholder="Instagram link"
+                    value={form.instagram}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        instagram:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <TextInput
+                    label={
+                      <Text c="white">
+                        Facebook Link
+                      </Text>
+                    }
+                    placeholder="Facebook link"
+                    value={form.facebook}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        facebook:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <TextInput
+                    label={
+                      <Text c="white">
+                        Email
+                      </Text>
+                    }
+                    placeholder="Your email"
+                    value={form.email}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        email:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <PasswordInput
+                    label={
+                      <Text c="white">
+                        Password
+                      </Text>
+                    }
+                    placeholder="Your password"
+                    value={form.password}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        password:
+                          e.target.value,
+                      })
+                    }
+                    styles={{
+                      input: {
+                        background:
+                          "transparent",
+                        color: "white",
+                        border:
+                          "1px solid rgba(255,255,255,0.2)",
+                      },
+                    }}
+                  />
+
+                  <Button
+                    fullWidth
+                    size="md"
+                    radius="md"
+                    loading={loading}
+                    onClick={submit}
+                    mt={10}
+                    style={{
+                      background:
+                        "linear-gradient(135deg,#0075ff,#0052cc)",
+                      height: 50,
+                      fontWeight: 700,
+                    }}
+                  >
+                    {loading
+                      ? "Creating...."
+                      : "SIGN UP"}
+                  </Button>
+
+                   <Group
+                  grow
+                  mb={20}
+                >
+                  <Button
+                    variant="outline"
+                    color="gray"
+                    radius="md"
+                    h={50}
+                  >
+                    <FaFacebookF />
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    color="gray"
+                    radius="md"
+                    h={50}
+                  >
+                    <FaApple />
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    color="gray"
+                    radius="md"
+                    h={50}
+                  >
+                    <FaGoogle />
+                  </Button>
+                </Group>
+                </Stack>
+              </Paper>
+
+              {/* FOOTER */}
+             
+            </Container>
+          </Grid.Col>
+        </Grid>
       </Paper>
-    </Container>
+    </Box>
   );
 }
