@@ -361,7 +361,7 @@ export default function UserCard({
                 Facebook
               </Button>
 
-              {/* WHATSAPP */}        
+                    
               <Button
                 component="a"
                 href={`https://wa.me/${user.whatsapp}`}
@@ -369,7 +369,7 @@ export default function UserCard({
                 radius="xl"
                 size="lg"
                 leftSection={<FaWhatsapp />}
-                styles={{
+                styles={{          
                   root: {
                     height: 52,
                     fontWeight: 700,
