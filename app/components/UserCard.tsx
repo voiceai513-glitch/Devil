@@ -388,6 +388,6 @@ export default function UserCard({
           </Stack>
         </Box>
       </Card>
-    </Flex>
+    </Flex>      
   );
 }       
